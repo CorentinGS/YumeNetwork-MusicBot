@@ -4,6 +4,6 @@ module.exports = {
     prefix : "&",
 
     api: {
-        google: "AIzaSyDm4JznejZRVHCveoh0I442QAHlPazcuec"
+        google: ""
     }
 }
