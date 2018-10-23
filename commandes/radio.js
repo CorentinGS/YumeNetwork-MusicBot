@@ -17,7 +17,7 @@ module.exports = {
             if(!message.member.voiceChannel) return message.channel.send(core.errorMsg("You are not in a voice channel"));
             var voiceConnection = bot.voiceConnections.find(val => val.channel.guild.id == message.guild.id);
             if(!player[message.guild.id]){
-                player[message.guild.id] = {queue: [], volume: 10, radio: false}
+                player[message.guild.id] = {queue: [], volume: 10, radio: true}
             }else{
                 player[message.guild.id].radio = true;
             }
@@ -27,7 +27,7 @@ module.exports = {
             }
             setTimeout(() => {
                 message.member.voiceChannel.join().then(conn => {
-                    let dispatcher = conn.playFile(radios[args.join(" ")].url, {volume: parseInt(player[message.guild.id].volume)/100});
+                    let dispatcher = conn.playArbitraryInput(radios[args.join(" ")].url, {volume: parseInt(player[message.guild.id].volume)/100});
                     dispatcher.on('end', () => {
                     });
                     message.channel.send(core.successMsg("Playing : "+radios[args.join(" ")].name));
