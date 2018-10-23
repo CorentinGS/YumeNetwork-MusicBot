@@ -1,0 +1,31 @@
+{
+  "name": "yumenetwork-musicbot",
+  "version": "1.0.0",
+  "description": "YumeNetwork - MusicBot | Coded with ♥ by OnDebian",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnDebian/YumeNetwork-MusicBot.git"
+  },
+  "keywords": [
+    "yumenetwork",
+    "music",
+    "discord",
+    "bot",
+    "youtube"
+  ],
+  "author": "OnDebian",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/OnDebian/YumeNetwork-MusicBot/issues"
+  },
+  "homepage": "https://github.com/OnDebian/YumeNetwork-MusicBot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "opusscript": "node-opus",
+    "ytdl-core": "^0.26.3"
+  }
+}
