@@ -3,6 +3,9 @@ const bot = new Discord.Client();
 const fs = require('fs');
 
 const config = require('./data/config.js');
+const core = require('./yume_modules/core.js');
+
+var player = {};
 
 fs.readdir(__dirname+"/events/", (err, files) => {
     if (err) return console.error(err);
@@ -22,10 +25,11 @@ bot.on('message', (message) => {
 
     try {
         var commandFile = require(`./commandes/${command}.js`);
-        commandFile.run(bot, message, command, args, config);
+        commandFile.run(bot, message, command, args, config, player);
     } catch (error) {
         if(error.code !== "MODULE_NOT_FOUND"){
-            message.channel.send();
+            message.channel.send(core.erroriMsg("Execute command "+config.prefix+command, error.message));
+            console.log(error);
         }
     }
 
@@ -36,3 +40,8 @@ bot.on('error', (error) => {
 });
 
 bot.login(config.token);
+
+process.on('SIGINT', () => {
+    bot.destroy()
+    process.exit(0)
+});
