@@ -1,5 +1,9 @@
 module.exports = {
     token : "",
     description : ["&help", "MusicBot"],
-    prefix : "&"
+    prefix : "&",
+
+    api: {
+        google: ""
+    }
 }
