@@ -1,0 +1,22 @@
+{
+  "name": "YumeNetwork-MusicBot",
+  "description": "Yume Network Music Bot",
+  "scripts": {
+    "postdeploy": "npm i"
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
